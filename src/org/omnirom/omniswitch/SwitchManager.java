@@ -37,7 +37,7 @@ import android.util.Log;
 
 public class SwitchManager {
     private static final String TAG = "SwitchManager";
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     private List<TaskDescription> mLoadedTasks;
     private SwitchLayout mLayout;
     private SwitchGestureView mGestureView;
