@@ -56,6 +56,7 @@ public class SwitchManager {
                 Log.d(TAG, "hide");
             }
             mGestureView.setHandleRecentsUpdate(true);
+            mLayout.setHandleRecentsUpdate(false);
             mLayout.hide();
         }
     }
@@ -65,6 +66,7 @@ public class SwitchManager {
             if(DEBUG){
                 Log.d(TAG, "show");
             }
+            mLayout.setHandleRecentsUpdate(true);
             mGestureView.setHandleRecentsUpdate(false);
             // update task list
             reload();
@@ -111,7 +113,9 @@ public class SwitchManager {
         }
         mLoadedTasks.clear();
         mLoadedTasks.addAll(taskList);
-        mLayout.update(mLoadedTasks);
+        if(mLayout.isHandleRecentsUpdate()){
+            mLayout.update(mLoadedTasks);
+        }
         if(mGestureView.isHandleRecentsUpdate()){
             mGestureView.update(mLoadedTasks);
         }

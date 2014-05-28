@@ -166,7 +166,7 @@ public class RecentTasksLoader {
 
         if(mPreloaded && mSwitchManager != null){
             if (DEBUG){
-                Log.d(TAG, "recents preloaded");
+                Log.d(TAG, "recents preloaded " + mLoadedTasks);
             }
             mSwitchManager.update(mLoadedTasks);
             mPreloaded = false;
